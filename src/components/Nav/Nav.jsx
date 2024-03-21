@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
 
@@ -33,20 +34,20 @@ const handleTheme=(e)=>{
     <div>
       <div className="navbar bg-base-100 shadow-lg flex md:flex-row flex-col fixed z-10 px-4">
         <div className="flex-1">
-          <a className="btn btn-ghost text-primary gap-0 font-bold text-2xl">
+          <NavLink to={"/"} className="btn btn-ghost text-primary gap-0 font-bold text-2xl">
             Byte<span className="text-secondary">Blaze</span>
-          </a>
+          </NavLink>
         </div>
         <div className=" ">
-          <ul className="menu flex md:flex-row flex-col  px-1">
+          <ul className="  flex md:flex-row flex-col  px-4 mr-5">
             <li>
-              <a className="text-xl font-bold">Home</a>
+              <NavLink to={"/"} className={({isActive})=>isActive?'text-xl font-bold text-primary mr-5':'text-xl font-bold mr-5'}>Home</NavLink>
             </li>
             <li>
-              <a className="text-xl font-bold text-primary">Blogs</a>
+            <NavLink to={"/blogs"} className={({isActive})=>isActive?'text-xl font-bold text-primary mr-5':'text-xl font-bold mr-5'}>Blogs</NavLink>
             </li>
             <li>
-              <a className="text-xl font-bold">BookMarks</a>
+            <NavLink to={"/bookmarks"} className={({isActive})=>isActive?'text-xl font-bold text-primary mr-5':'text-xl font-bold mr-5'}>Bookmarks</NavLink>
             </li>
           </ul>
         </div>
